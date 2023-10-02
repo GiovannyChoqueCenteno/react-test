@@ -28,11 +28,8 @@ pipeline {
         stage('Ejecutar Pruebas Unitarias') {
             steps {
                 // Ejecutar pruebas unitarias si existen
-                try {
                     sh 'npm test'
-                } catch (Exception e) {
                     echo "Ejecución de Pruebas Completada"
-                }
             }
         }
 
