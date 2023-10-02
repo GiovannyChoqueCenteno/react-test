@@ -14,6 +14,7 @@ pipeline {
         stage('Instalar Dependencias') {
             steps {
                 // Instalar las dependencias de Node.js
+                        sh "apk add nodejs"
                 sh 'npm install'
             }
         }
