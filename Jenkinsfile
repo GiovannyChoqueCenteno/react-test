@@ -39,7 +39,7 @@ pipeline {
                 sh 'docker build -t reacttest:latest .'
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-                    sh 'docker tag reactest:latest giocc/reactest:latest'
+                    sh 'docker tag reacttest:latest giocc/reacttest:latest'
                     sh 'docker push giocc/reacttest:latest'
                 }
             }
