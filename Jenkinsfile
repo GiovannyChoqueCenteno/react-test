@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+    agent docker { 
+image 'alpine:3.12.0' 
+args '-u root:root'
+ } 
     tools{
         nodejs  "nodejs"
     }
