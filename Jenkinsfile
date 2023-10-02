@@ -1,10 +1,7 @@
 pipeline {
-    agent docker { 
-image 'alpine:3.12.0' 
-args '-u root:root'
- } 
+    agent any
     tools{
-        nodejs  "nodejs"
+        nodejs  "18.16.1"
     }
     stages {
         stage('Clonar Repositorio') {
