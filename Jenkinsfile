@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools{
-        nodejs  "18.16.1"
+        nodejs  "nodejs"
     }
     stages {
         stage('Clonar Repositorio') {
@@ -14,7 +14,6 @@ pipeline {
         stage('Instalar Dependencias') {
             steps {
                 // Instalar las dependencias de Node.js
-                        sh "apk add nodejs"
                 sh 'npm install'
             }
         }
