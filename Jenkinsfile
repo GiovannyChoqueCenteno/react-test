@@ -5,7 +5,7 @@ pipeline {
         stage('Clonar Repositorio') {
             steps {
                 // Clonar el repositorio desde tu URL
-                git 'https://github.com/GiovannyChoqueCenteno/react-test.git
+                git 'https://github.com/GiovannyChoqueCenteno/react-test.git'
             }
         }
 
@@ -49,6 +49,7 @@ pipeline {
             steps {
                 // Agregar pasos para el despliegue de la aplicación React
                 // Esto puede variar según tu entorno de despliegue (ejemplo: copiar archivos a un servidor web)
+                echo "Ejecutando despliegue simulado..."
             }
         }
     }
