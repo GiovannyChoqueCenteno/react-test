@@ -37,7 +37,7 @@ pipeline {
             steps {
                 // Construir y publicar el contenedor Docker en Docker Hub
                 sh 'docker build -t reacttest:tag .'
-                withCredentials([usernamePassword(credentialsId: 'tus-credenciales-dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
                     sh 'docker push reacttest:tag'
                 }
