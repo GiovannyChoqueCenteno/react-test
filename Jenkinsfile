@@ -7,8 +7,8 @@ pipeline {
         stage('Clonar Repositorio') {
             steps {
                 // Clonar el repositorio desde tu URL
-                git 'https://github.com/GiovannyChoqueCenteno/react-test.git'
-            }
+               git credentialsId: 'GiovannyChoqueCenteno', url: 'https://github.com/GiovannyChoqueCenteno/react-test'
+                   }
         }
 
         stage('Instalar Dependencias') {
