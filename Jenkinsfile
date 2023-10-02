@@ -36,10 +36,11 @@ pipeline {
         stage('Construir y Publicar Contenedor Docker') {
             steps {
                 // Construir y publicar el contenedor Docker en Docker Hub
-                sh 'docker build -t reacttest:tag .'
+                sh 'docker build -t reacttest:latest .'
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
-                    sh 'docker push giocc/reacttest:tag'
+                    sh 'docker tag reactest:latest giocc/reactest:latest'
+                    sh 'docker push giocc/reacttest:latest'
                 }
             }
         }
